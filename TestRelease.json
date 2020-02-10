@@ -1,0 +1,98 @@
+{
+	"objects": [
+		{
+			"applicationVersions": [
+				"Local|WebApp"
+			],
+			"ownerParties": [
+				"mike.halliday@broadcom.com"
+			],
+			"markAsDonePhaseName": "",
+			"runOnCreation": false,
+			"version": "${ReleaseVersion}",
+			"name": "Test Release",
+			"kind": "Release"
+		},
+		{
+			"release": "Test Release/1.0",
+			"environments": [
+				"Dev"
+			],
+			"skipTasksWithUnchangedApplications": false,
+			"isApprovalRequired": false,
+			"approvalGate": "AUTOMATIC",
+			"name": "Dev",
+			"kind": "Phase"
+		},
+		{
+			"release": "Test Release/1.0",
+			"environments": [
+				"UAT"
+			],
+			"skipTasksWithUnchangedApplications": false,
+			"isApprovalRequired": false,
+			"previousPhase": "Dev",
+			"approvalGate": "AUTOMATIC",
+			"name": "UAT",
+			"kind": "Phase"
+		},
+		{
+			"release": "Test Release/1.0",
+			"environments": [
+				"Prod"
+			],
+			"skipTasksWithUnchangedApplications": false,
+			"isApprovalRequired": false,
+			"previousPhase": "UAT",
+			"approvalGate": "AUTOMATIC",
+			"name": "Prod",
+			"kind": "Phase"
+		},
+		{
+			"phase": "Test Release/1.0/Dev",
+			"isDisabled": false,
+			"name": "provision env",
+			"kind": "Task",
+			"endpoint": "Jira",
+			"plugin": "Jira/2.3",
+			"parameters": {
+				"issueType": "Task",
+				"summary": "test cdd",
+				"projectKey": "FIR",
+				"issueKey": "",
+				"epicName": "",
+				"advanced": "false"
+			},
+			"type": "Create Jira Issue"
+		},
+		{
+			"phase": "Test Release/1.0/Dev",
+			"isDisabled": true,
+			"previousTasks": [
+				"provision env"
+			],
+			"name": "Step 1",
+			"kind": "Task",
+			"endpoint": "Slack",
+			"plugin": "Slack/1.1",
+			"parameters": {
+				"channel": "#Random",
+				"message": "Dev complete",
+				"username": "Mike's CD Director"
+			},
+			"type": "Post message"
+		},
+		{
+			"phase": "Test Release/1.0/UAT",
+			"isDisabled": false,
+			"name": "Step 1",
+			"kind": "Task"
+		},
+		{
+			"phase": "Test Release/1.0/Prod",
+			"isDisabled": false,
+			"name": "Step 1",
+			"kind": "Task"
+		}
+	]
+}

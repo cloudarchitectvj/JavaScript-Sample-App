@@ -1,0 +1,11 @@
+{
+    "parameters":[
+    {
+        "name":"ReleaseVersion",
+        "value":"1"
+    }],
+    "reference":{
+        "FileName":"TestRelease.json",
+        "FileSource":"GItFileSource"
+    }
+    }
