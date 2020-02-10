@@ -2,10 +2,10 @@
     "parameters":[
     {
         "name":"ReleaseVersion",
-        "value":"2.0"
+        "value":"3.0"
     }],
     "reference":{
         "FileName":"TestRelease.json",
         "FileSource":"GItFileSource"
     }
-    }
+}
