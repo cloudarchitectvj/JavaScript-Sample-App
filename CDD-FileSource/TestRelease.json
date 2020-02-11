@@ -9,12 +9,12 @@
 			],
 			"markAsDonePhaseName": "",
 			"runOnCreation": false,
-			"version": "3.0",
+			"version": "4.0",
 			"name": "Test Release",
 			"kind": "Release"
 		},
 		{
-			"release": "Test Release/3.0",
+			"release": "Test Release/4.0",
 			"environments": [
 				"Dev"
 			],
@@ -25,7 +25,7 @@
 			"kind": "Phase"
 		},
 		{
-			"release": "Test Release/3.0",
+			"release": "Test Release/4.0",
 			"environments": [
 				"UAT"
 			],
@@ -37,7 +37,7 @@
 			"kind": "Phase"
 		},
 		{
-			"release": "Test Release/3.0",
+			"release": "Test Release/4.0",
 			"environments": [
 				"Prod"
 			],
@@ -49,7 +49,7 @@
 			"kind": "Phase"
 		},
 		{
-			"phase": "Test Release/3.0/Dev",
+			"phase": "Test Release/4.0/Dev",
 			"isDisabled": false,
 			"name": "provision env",
 			"kind": "Task",
@@ -66,7 +66,7 @@
 			"type": "Create Jira Issue"
 		},
 		{
-			"phase": "Test Release/3.0/Dev",
+			"phase": "Test Release/4.0/Dev",
 			"isDisabled": true,
 			"previousTasks": [
 				"provision env"
@@ -83,13 +83,13 @@
 			"type": "Post message"
 		},
 		{
-			"phase": "Test Release/3.0/UAT",
+			"phase": "Test Release/4.0/UAT",
 			"isDisabled": false,
 			"name": "Step 1",
 			"kind": "Task"
 		},
 		{
-			"phase": "Test Release/3.0/Prod",
+			"phase": "Test Release/4.0/Prod",
 			"isDisabled": false,
 			"name": "Step 1",
 			"kind": "Task"
