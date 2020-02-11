@@ -9,7 +9,7 @@
 			],
 			"markAsDonePhaseName": "",
 			"runOnCreation": false,
-			"version": "3.0",
+			"version": "${ReleaseVersion}",
 			"name": "Test Release",
 			"kind": "Release"
 		},
